@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibService", "LibService.csproj", "{58142FEC-C037-4894-810A-E56E3D012E5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECA07F8F-0CBE-4B27-8F5D-FDC2679F3AFA}"
+	ProjectSection(SolutionItems) = preProject
+		Web.config = Web.config
+		MyViewCell.xaml = MyViewCell.xaml
+		MyViewCell.xaml.cs = MyViewCell.xaml.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibService.View", "..\LibService.View\LibService.View.csproj", "{5CCFE81C-0325-4F2A-A0A4-D24D7B0CB5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58142FEC-C037-4894-810A-E56E3D012E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58142FEC-C037-4894-810A-E56E3D012E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58142FEC-C037-4894-810A-E56E3D012E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58142FEC-C037-4894-810A-E56E3D012E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCFE81C-0325-4F2A-A0A4-D24D7B0CB5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCFE81C-0325-4F2A-A0A4-D24D7B0CB5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCFE81C-0325-4F2A-A0A4-D24D7B0CB5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCFE81C-0325-4F2A-A0A4-D24D7B0CB5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDA17C3D-0557-4938-AC13-2A01536CF2C3}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 80
+		$4.TabsToSpaces = True
+		$4.scope = text/plain
+		$0.TextStylePolicy = $5
+		$5.inheritsSet = null
+		$5.scope = text/x-json
+		$0.TextStylePolicy = $6
+		$6.inheritsSet = null
+		$6.scope = text/x-web
+		$0.TextStylePolicy = $7
+		$7.inheritsSet = null
+		$7.scope = text/x-vs
+		$0.StandardHeader = $8
+	EndGlobalSection
+EndGlobal
