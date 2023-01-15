@@ -1,0 +1,54 @@
+﻿@model LibService.View.Models.BookCategoryViewModel
+
+@{
+    ViewData["Title"] = "Library";
+}
+
+
+<form asp-controller="Lib" asp-action="Index">
+    <p>
+        <select asp-for="SearchType" asp-items="Html.GetEnumSelectList<SearchType>()">
+        </select>
+
+        <input type="text" name="searchStr" />
+
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Authors)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Authors)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
