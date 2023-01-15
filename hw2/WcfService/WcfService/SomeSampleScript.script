@@ -1,0 +1,12 @@
+﻿namespace Example
+{
+    public class SomeSampleScript
+    {
+        public bool EntryPoint()
+        {
+            System.Random r = new System.Random();
+            int number = r.Next(0,10);
+            return number > 5 ? true : false;
+        }
+    }
+}
