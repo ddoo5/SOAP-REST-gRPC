@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Google.Protobuf" />
+    <None Remove="Grpc.Tools" />
+    <None Remove="Grpc.Net.Client" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.12" />
+    <PackageReference Include="Grpc.Tools" Version="2.51.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Grpc.Net.Client" Version="2.51.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="..\VetClinicService\Protos\vet.proto" Link="Protos\vet.proto" GrpcServices="Client">
+    </Protobuf>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VetClinicService\VetClinicService.csproj" />
+  </ItemGroup>
+</Project>
