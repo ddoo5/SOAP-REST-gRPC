@@ -1,0 +1,126 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "VetClinicService";
+
+import "google/protobuf/wrappers.proto";
+import "google/api/annotations.proto";
+
+package proto;
+
+//clinic service
+service VetClinicService{
+    //add client
+    rpc CreateClient (CreateClientRequest) returns (CreateClientResponse){
+        option (google.api.http) = {
+            post: "/api/client/create"
+        };
+    }
+    //update client
+    rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse){
+        option (google.api.http) = {
+            post: "/api/client/update"
+        };
+    }
+    //delete client
+    rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse){
+        option (google.api.http) = {
+            post: "/api/client/delete"
+        };
+    }
+    //get client by id
+    rpc GetByClientId (GetByClientIdRequest) returns (GetByClientIdResponse){
+        option (google.api.http) = {
+            post: "/api/client/getbyid"
+        };
+    }
+    //get all clients
+    rpc GetClients (GetClientsRequest) returns (GetClientsResponse){
+        option (google.api.http) = {
+            get: "/api/client/getall"
+        };
+    }
+
+    /*rpc CreatePet (CreatePetRequest) returns (CreatePetResponse);
+    rpc UpdatePet (UpdatePetRequest) returns (UpdatePetResponse);
+    rpc DeletePet(DeletePetRequest) returns (DeletePetResponse);
+    rpc GetByPetId (GetByPetIdRequest) returns (GetByPetIdResponse);
+    rpc GetPets(GetPetsRequest) returns (GetPetsResponse);*/
+}
+
+//request settings
+message CreateClientRequest{
+    //document
+    string document = 1;
+    //last name
+    string lastname = 2;
+    //first name
+    string firstname = 3;
+    //patronymic
+    string patronymic = 4;
+}
+
+//response settings
+message CreateClientResponse{
+    google.protobuf.Int32Value clientId = 1;
+    int32 errorCode = 2;
+    string errorMessage = 3;
+}
+
+//request settings
+message UpdateClientRequest{
+    int32 clientId = 1;
+    string document = 2;
+    string lastname = 3;
+    string firstname = 4;
+    string patronymic = 5;
+}
+
+//response settings
+message UpdateClientResponse{
+    int32 errorCode = 1;
+    string errorMessage = 2;
+}
+
+//request settings
+message DeleteClientRequest{
+    int32 clientId = 1;
+}
+
+//response settings
+message DeleteClientResponse{
+    int32 errorCode = 1;
+    string errorMessage = 2;
+}
+
+//request settings
+message GetByClientIdRequest{
+    int32 clientId = 1;
+}
+
+//response settings
+message GetByClientIdResponse{
+    ClientResponse client = 1;
+    int32 errorCode = 2;
+    string errorMessage = 3;
+}
+
+//response settings
+message ClientResponse{
+    int32 clientId = 1;
+    string document = 2;
+    string lastname = 3;
+    string firstname = 4;
+    string patronymic = 5;
+}
+
+//request settings
+message GetClientsRequest{
+    //to get all clients you shouldn't send something
+}
+
+//response settings
+message GetClientsResponse{
+    repeated ClientResponse clients = 1;
+    int32 errorCode = 2;
+    string errorMessage = 3;
+}
